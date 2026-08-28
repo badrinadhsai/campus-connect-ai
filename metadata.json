@@ -1,0 +1,6 @@
+{
+  "name": "Campus Connect",
+  "description": "Smart Student Problem Reporting & Resolution Platform for universities, streamlining complaint management for students, staff, and administrators.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
