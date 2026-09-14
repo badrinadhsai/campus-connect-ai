@@ -12,7 +12,7 @@ responsible department, and drafts a suggested action plan.
 
 ## Problem It Solves
 
-University campuses generate a high volume of零散 (scattered) complaints — broken projectors, water
+University campuses generate a high volume of scattered complaints — broken projectors, water
 leaks, Wi-Fi outages, lost items — that traditionally get lost in WhatsApp groups and email threads.
 Campus Connect AI provides a single, structured pipeline:
 
@@ -190,9 +190,35 @@ Render, Fly.io, Railway, or any Node host.
 
 ---
 
+## Demo
+
+> No public demo — run locally (see Installation above). With no Supabase/Gemini credentials the app runs in in-memory demo mode with seed data.
+
+---
+
 ## Screenshots
 
 > Screenshots are not included in this repository. Add images under `assets/` and link them here.
+
+---
+
+## Limitations
+
+- Role checks are light (mostly client-side); server-side RBAC enforcement is still needed before any real deployment.
+- Email delivery is an in-memory dispatch log, not real SMTP.
+- Attachments are metadata only; file storage via Supabase Storage is not implemented.
+- AI classification quality has not been evaluated on a labeled set; the keyword fallback is deterministic but crude.
+- No automated tests; large initial JS bundle (see Future Improvements).
+
+---
+
+## What I Learned
+
+- Modeling a multi-role workflow (Student/Staff/Admin) with a single complaint lifecycle state machine.
+- Calling an LLM (Gemini) for structured classification output with a deterministic fallback when the key is absent.
+- Structuring an Express + Vite single-origin app for dev and production.
+- Designing a Supabase/Postgres schema with migrations, audit logs, and seed data.
+- Building analytics (SLA tracking, distributions, trends) directly on operational data.
 
 ---
 
